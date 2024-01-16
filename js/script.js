@@ -28,18 +28,63 @@ console.log(guestsList);
 
 // ### SNACK 2
 // Abbiamo un elenco degli studenti di una facoltà, identificati da id, Nome e somma totale dei loro voti di esame...
+
+// Array studenti:
+const students = [
+    {
+        id: 213,
+        name: "Marco della Rovere",
+        votes: 78,
+    },
+    {
+        id: 110,
+        name: "Paola Cortellessa",
+        votes: 96,
+    },
+    {
+        id: 250,
+        name: "Andrea Mantegna",
+        votes: 48,
+    },
+    {
+        id: 145,
+        name: "Gaia Borromini",
+        votes: 74,
+    },
+    {
+        id: 196,
+        name: "Luigi Grimaldello",
+        votes: 68,
+    },
+    {
+        id: 102,
+        name: "Piero della Francesca",
+        votes: 50,
+    },
+    {
+        id: 120,
+        name: "Francesca da Polenta",
+        votes: 84,
+    },
+]
+
 // Per preparare l'aula di un nuovo corso, dobbiamo svolgere una serie di operazioni
-
 // Dobbiamo creare una lista di tutti gli studenti che hanno un totale di voti superiore a 70
-// Dobbiamo creare una lista di tutti gli studenti che hanno un totale di voti superiore a 70 e id superiore a 120
-// dobbiamo stampare le targhe col nome degli studenti: creare una lista contenente il loro nome tutto in maiuscolo ES (Marco della Rovere => MARCO DELLA ROVERE);
-// Questo è l'elenco degli studenti:
+const students70More = students.filter((student) => {
+if (student.votes > 70) {return student}
+});
 
-// Id|Name|Grades
-// 213|Marco della Rovere|78
-// 110|Paola Cortellessa|96
-// 250|Andrea Mantegna|48
-// 145|Gaia Borromini|74
-// 196|Luigi Grimaldello|68
-// 102|Piero della Francesca|50
-// 120|Francesca da Polenta|84
+console.log(students70More);
+
+// Dobbiamo creare una lista di tutti gli studenti che hanno un totale di voti superiore a 70 e id superiore a 120
+const students70and120 = students.filter((student) => {
+    if (student.votes > 70 && student.id > 120) {return student}
+    });
+    
+    console.log(students70and120);
+
+// dobbiamo stampare le targhe col nome degli studenti: creare una lista contenente il loro nome tutto in maiuscolo ES (Marco della Rovere => MARCO DELLA ROVERE);
+const studentsNamesUC = students.map ((student) => {
+    return student.name.toUpperCase()});
+
+console.log(studentsNamesUC);
