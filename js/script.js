@@ -28,68 +28,65 @@ const guestsList = guests.map((guest, i) => {
 
 console.log(guestsList);
 
-// // ### SNACK 2
-// // Abbiamo un elenco degli studenti di una facoltà, identificati da id, Nome e somma totale dei loro voti di esame...
+// ### SNACK 2
+// Abbiamo un elenco degli studenti di una facoltà, identificati da id, Nome e somma totale dei loro voti di esame...
 
-// // Array studenti:
-// const students = [
-//     {
-//         id: 213,
-//         name: "Marco della Rovere",
-//         votes: 78,
-//     },
-//     {
-//         id: 110,
-//         name: "Paola Cortellessa",
-//         votes: 96,
-//     },
-//     {
-//         id: 250,
-//         name: "Andrea Mantegna",
-//         votes: 48,
-//     },
-//     {
-//         id: 145,
-//         name: "Gaia Borromini",
-//         votes: 74,
-//     },
-//     {
-//         id: 196,
-//         name: "Luigi Grimaldello",
-//         votes: 68,
-//     },
-//     {
-//         id: 102,
-//         name: "Piero della Francesca",
-//         votes: 50,
-//     },
-//     {
-//         id: 120,
-//         name: "Francesca da Polenta",
-//         votes: 84,
-//     },
-// ]
+// Array studenti:
+const students = [
+    {
+        id: 213,
+        name: "Marco della Rovere",
+        votes: 78,
+    },
+    {
+        id: 110,
+        name: "Paola Cortellessa",
+        votes: 96,
+    },
+    {
+        id: 250,
+        name: "Andrea Mantegna",
+        votes: 48,
+    },
+    {
+        id: 145,
+        name: "Gaia Borromini",
+        votes: 74,
+    },
+    {
+        id: 196,
+        name: "Luigi Grimaldello",
+        votes: 68,
+    },
+    {
+        id: 102,
+        name: "Piero della Francesca",
+        votes: 50,
+    },
+    {
+        id: 120,
+        name: "Francesca da Polenta",
+        votes: 84,
+    },
+]
 
-// // Per preparare l'aula di un nuovo corso, dobbiamo svolgere una serie di operazioni
-// // Dobbiamo creare una lista di tutti gli studenti che hanno un totale di voti superiore a 70
-// const students70More = students.filter(({votes}) => {votes > 70});
+// Per preparare l'aula di un nuovo corso, dobbiamo svolgere una serie di operazioni
+// Dobbiamo creare una lista di tutti gli studenti che hanno un totale di voti superiore a 70
+const students70More = students.filter(student => student.votes > 70);
+console.log(students70More);
 
-// console.log(students70More);
+// Dobbiamo creare una lista di tutti gli studenti che hanno un totale di voti superiore a 70 e id superiore a 120
+const students70and120 = students.filter(student => student.votes > 70 && student.id > 120);
+console.log(students70and120);
 
-// // Dobbiamo creare una lista di tutti gli studenti che hanno un totale di voti superiore a 70 e id superiore a 120
-// const students70and120 = students.filter((student) => {
-//     if (student.votes > 70 && student.id > 120) {return student}
-//     });
-
-//     // const students70and120 = students.filter(({votes, id}) => {votes > 70 && id > 120});
-//     // const students70and120 = students70More.filter(({id}) => {id > 120});
+    // alternative
+    // const students70and120 = students.filter(({votes, id}) => {votes > 70 && id > 120});
+    // const students70and120 = students70More.filter(({id}) => {id > 120});
     
-//     console.log(students70and120);
 
-// // dobbiamo stampare le targhe col nome degli studenti: creare una lista contenente il loro nome tutto in maiuscolo ES (Marco della Rovere => MARCO DELLA ROVERE);
-// const studentsNamesUC = students.map ((name) => name.toUpperCase());
-
-// console.log(studentsNamesUC);
+// dobbiamo stampare le targhe col nome degli studenti: creare una lista contenente il loro nome tutto in maiuscolo ES (Marco della Rovere => MARCO DELLA ROVERE);
+const studentsNamesUC = students.map(student => student.name.toUpperCase());
+console.log(studentsNamesUC);
 
 // # SNACK 3
 // Creare un array di oggetti: ogni oggetto descriverà una bici da corsa con le seguenti proprietà: name e peso.
@@ -121,13 +118,12 @@ const racingBike = [
 
 let lightestBike = racingBike[0];
 
-for (let i = 0; i < racingBike.length; i++) {
-    if (racingBike[i].weight < lightestBike.weight) {
-        lightestBike = racingBike[i];
-    } 
-}
+racingBike.forEach((racingBike) => {
+    if (racingBike.weight < lightestBike.weight) {
+        lightestBike = racingBike;
+    }});
 
-console.log(lightestBike);
+console.log(`La bici più leggera è: ${lightestBike.model.toUpperCase()} con un peso di ${lightestBike.weight}`);
 
 // # SNACK 4
 // Creare un array di oggetti di squadre di calcio.
