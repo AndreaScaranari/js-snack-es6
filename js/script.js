@@ -1,32 +1,32 @@
-// // ### SNACK 1
-// // Il Grande Gatsby ci ha chiesto di creare i segnaposto per il tavolo degli invitati alla sua mega festa vip.
-// // Ci ha lasciato il nome del tavolo e la lista degli invitati in ordine di posto.
+// ### SNACK 1
+// Il Grande Gatsby ci ha chiesto di creare i segnaposto per il tavolo degli invitati alla sua mega festa vip.
+// Ci ha lasciato il nome del tavolo e la lista degli invitati in ordine di posto.
 
-// // nome del tavolo
-// const vipTable = "Tavolo Vip";
+// nome del tavolo
+const vipTable = "Tavolo Vip";
 
-// // lista guest in ordine di posto
-// const guests = [
-//   'Brad Pitt',
-//   'Johnny Depp',
-//   'Lady Gaga',
-//   'Cristiano Ronaldo',
-//   'Georgina Rodriguez',
-//   'Chiara Ferragni',
-//   'Fedez',
-//   'George Clooney',
-//   'Amal Clooney',
-//   'Maneskin'
-// ];
+// lista guest in ordine di posto
+const guests = [
+  'Brad Pitt',
+  'Johnny Depp',
+  'Lady Gaga',
+  'Cristiano Ronaldo',
+  'Georgina Rodriguez',
+  'Chiara Ferragni',
+  'Fedez',
+  'George Clooney',
+  'Amal Clooney',
+  'Maneskin'
+];
 
-// // Per stampare il tutto, la tipografia vuole che le mandiamo una lista di ospiti in cui ogni ospite sia un oggetto javascript che ha come attributi: nome del tavolo, nome dell'ospite e posto occupato.
-// // Generiamo questo array in una variabile ``guestsList`` e stampiamolo in console.
+// Per stampare il tutto, la tipografia vuole che le mandiamo una lista di ospiti in cui ogni ospite sia un oggetto javascript che ha come attributi: nome del tavolo, nome dell'ospite e posto occupato.
+// Generiamo questo array in una variabile ``guestsList`` e stampiamolo in console.
 
-// const guestsList = guests.map((guest, i) => {
-//     return `Nome del tavolo: ${vipTable}, Nome del guest: ${guest}, Posizione in cui è sedutə: ${i+1}`
-// });
+const guestsList = guests.map((guest, i) => {
+    return `Nome del tavolo: ${vipTable}, Nome del guest: ${guest}, Posizione in cui è sedutə: ${i+1}`
+});
 
-// console.log(guestsList);
+console.log(guestsList);
 
 // // ### SNACK 2
 // // Abbiamo un elenco degli studenti di una facoltà, identificati da id, Nome e somma totale dei loro voti di esame...
@@ -129,4 +129,53 @@ for (let i = 0; i < racingBike.length; i++) {
 
 console.log(lightestBike);
 
+// # SNACK 4
+// Creare un array di oggetti di squadre di calcio.
+// Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
+// nome sarà l’unica proprietà da inventare voi, le altre saranno tutte settate a 0.
 
+const teams = [
+    {
+        name: "Juventus",
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: "Milan",
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: "Inter",
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: "Roma",
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: "Napoli",
+        points: 0,
+        fouls: 0
+    },
+];
+
+// Generare numeri random al posto degli 0 nelle proprietà punti fatti e falli subiti.
+const getRandomNumber = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+teams.forEach((teams) => {
+    teams.points = getRandomNumber(25, 50);
+    teams.fouls = getRandomNumber(40, 80);
+});
+// console.log(teams);
+
+// Infine, usando il destructuring, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console
+const newTeams = teams.map(({name, fouls} = teams) => {
+    return `Nome squadra: ${name}, Falli subiti: ${fouls}`;
+})
+
+console.log(newTeams);
