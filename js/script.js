@@ -91,7 +91,7 @@ console.log(studentsNamesUC);
 // # SNACK 3
 // Creare un array di oggetti: ogni oggetto descriverà una bici da corsa con le seguenti proprietà: name e peso.
 
-const racingBike = [
+const racingBikes = [
     {
         model: "bikea",
         weight: 10
@@ -116,14 +116,15 @@ const racingBike = [
 
 // Stampare in console la bici con peso minore utilizzando il destructuring.
 
-let lightestBike = racingBike[0];
+let lightestBike = racingBikes[0];
 
-racingBike.forEach((racingBike) => {
+racingBikes.forEach((racingBike) => {
     if (racingBike.weight < lightestBike.weight) {
         lightestBike = racingBike;
     }});
 
-console.log(`La bici più leggera è: ${lightestBike.model.toUpperCase()} con un peso di ${lightestBike.weight}`);
+const { weight, model } = lightestBike
+console.log(`La bici più leggera è: ${model.toUpperCase()} con un peso di ${weight}`);
 
 // # SNACK 4
 // Creare un array di oggetti di squadre di calcio.
@@ -163,9 +164,9 @@ const getRandomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-teams.forEach((teams) => {
-    teams.points = getRandomNumber(25, 50);
-    teams.fouls = getRandomNumber(40, 80);
+teams.forEach((team) => {
+    team.points = getRandomNumber(25, 50);
+    team.fouls = getRandomNumber(40, 80);
 });
 // console.log(teams);
 
