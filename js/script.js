@@ -3,7 +3,7 @@
 // Ci ha lasciato il nome del tavolo e la lista degli invitati in ordine di posto.
 
 // nome del tavolo
-const vipTable = [];
+const vipTable = "Tavolo Vip";
 
 // lista guest in ordine di posto
 const guests = [
@@ -22,7 +22,9 @@ const guests = [
 // Per stampare il tutto, la tipografia vuole che le mandiamo una lista di ospiti in cui ogni ospite sia un oggetto javascript che ha come attributi: nome del tavolo, nome dell'ospite e posto occupato.
 // Generiamo questo array in una variabile ``guestsList`` e stampiamolo in console.
 
-const guestsList = guests.map((guest, i) => {return `Nome del tavolo: Tavolo Vip, Nome del guest: ${guest}, Posizione in cui è sedutə: ${i+1}`});
+const guestsList = guests.map((guest, i) => {
+    return `Nome del tavolo: ${vipTable}, Nome del guest: ${guest}, Posizione in cui è sedutə: ${i+1}`
+});
 
 console.log(guestsList);
 
@@ -70,9 +72,7 @@ const students = [
 
 // Per preparare l'aula di un nuovo corso, dobbiamo svolgere una serie di operazioni
 // Dobbiamo creare una lista di tutti gli studenti che hanno un totale di voti superiore a 70
-const students70More = students.filter((student) => {
-if (student.votes > 70) {return student}
-});
+const students70More = students.filter(({votes}) => {votes > 70});
 
 console.log(students70More);
 
@@ -80,11 +80,13 @@ console.log(students70More);
 const students70and120 = students.filter((student) => {
     if (student.votes > 70 && student.id > 120) {return student}
     });
+
+    // const students70and120 = students.filter(({votes, id}) => {votes > 70 && id > 120});
+    // const students70and120 = students70More.filter(({id}) => {id > 120});
     
     console.log(students70and120);
 
 // dobbiamo stampare le targhe col nome degli studenti: creare una lista contenente il loro nome tutto in maiuscolo ES (Marco della Rovere => MARCO DELLA ROVERE);
-const studentsNamesUC = students.map ((student) => {
-    return student.name.toUpperCase()});
+const studentsNamesUC = students.map ((name) => name.toUpperCase());
 
 console.log(studentsNamesUC);

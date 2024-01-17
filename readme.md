@@ -38,3 +38,15 @@ Questo è l'elenco degli studenti:<br>
 196|Luigi Grimaldello|68<br>
 102|Piero della Francesca|50<br>
 120|Francesca da Polenta|84<br>
+
+### SNACK 3
+Creare un array di oggetti:<br>
+Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: name e peso.<br>
+Stampare in console la bici con peso minore utilizzando il destructuring.
+
+### SNACK 4
+Creare un array di oggetti di squadre di calcio.<br>
+Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.<br>
+nome sarà l’unica proprietà da inventare voi, le altre saranno tutte settate a 0.<br>
+Generare numeri random al posto degli 0 nelle proprietà punti fatti e falli subiti.<br>
+Infine, usando il destructuring, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console
